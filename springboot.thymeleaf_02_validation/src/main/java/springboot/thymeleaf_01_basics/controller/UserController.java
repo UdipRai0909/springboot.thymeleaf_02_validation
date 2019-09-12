@@ -41,11 +41,11 @@ public class UserController {
 		ModelAndView mav = new ModelAndView();
 		if(result.hasErrors()) {
 			logger.info("Validation Error in inserting the values.");
-//			mav.setViewName("createUser");
-//			mav.addObject("user", myUser);
-//			return mav;
-			ModelAndView mav1 = new ModelAndView("redirect:/user/createuser");
-			return mav1;
+			mav.setViewName("createuser");
+			mav.addObject("user", myUser);
+			return mav;
+//			ModelAndView mav1 = new ModelAndView("redirect:/user/createuser");
+//			return mav1;
 		}
 		userService.addUser(myUser);
 		mav.addObject("allUsers", userService.getAllUsers());
